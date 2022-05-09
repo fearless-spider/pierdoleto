@@ -1,0 +1,14 @@
+version: "3"
+services:
+    app:
+        image: pierdoleto:latest
+        container_name: app
+        restart: unless-stopped
+        build:
+            # build the image from Dockerfile
+            context: .
+        volumes:
+            - .:/code
+        command: lapis server
+        ports:
+            - "8080:8080"
