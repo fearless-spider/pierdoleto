@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Pierdole To - <%= page_title or 'Strona główna' %></title>
+</head>
+<body>
+  <h1>Pierdole To</h1>
+  <% content_for("inner") %>
+</body>
+</html>
