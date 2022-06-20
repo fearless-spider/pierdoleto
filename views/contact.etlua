@@ -1,0 +1,13 @@
+<h1>Kontakt</h1>
+<form method="POST" action="/kontakt">
+  <label for="name">
+    <input id="name" type="text" />
+  </label>
+  <label for="email">
+    <input id="email" type="email" />
+  </label>
+  <label for="message">
+    <textarea id="message" name="message" ></textarea>
+  </label>
+  <button type="submit">Wyślij</button>
+</form>
