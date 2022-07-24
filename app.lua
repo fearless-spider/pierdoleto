@@ -7,6 +7,15 @@ app.layout = require("views.layout")
 app:get("index", "/", function()
 	return { render = "index" }
 end)
+app:get("tluszczakomiesak", "/miesaki/tluszczakomiesak/", function()
+	return { render = "tluszczakomiesak" }
+end)
+app:get("dioksyny", "/dioksyny/", function()
+	return { render = "dioksyny" }
+end)
+app:get("miesaki", "/miesaki/", function()
+	return { render = "miesaki" }
+end)
 
 app:match(
 	"contact",
