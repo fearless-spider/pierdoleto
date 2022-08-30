@@ -12,3 +12,4 @@ services:
         command: lapis server
         ports:
             - "8080:8080"
+            - "5432:5432"

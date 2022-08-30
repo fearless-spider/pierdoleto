@@ -1,10 +1,17 @@
 local lapis = require("lapis")
+local Model = require("lapis.db.model").Model
 local respond_to = require("lapis.application").respond_to
+
 local app = lapis.Application()
+
 app:enable("etlua")
 app.layout = require("views.layout")
 
+local Articles = Model:extend("articles")
+
 app:get("index", "/", function()
+	local row = Articles:columns()
+	print(row)
 	return { render = "index" }
 end)
 app:get("tluszczakomiesak", "/miesaki/tluszczakomiesak/", function()
