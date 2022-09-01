@@ -1,5 +1,22 @@
-version: "3"
+version: "3.9"
 services:
+    db:
+        image: postgres:latest
+        volumes:
+            - ./data/db:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_USER=fearless
+            - POSTGRES_PASSWORD=fearless
+            - PGDATABASE=pierdoleto
+            - PGUSER=fearless
+            - PGPASSWORD=fearless
+        ports:
+            - "5432:5432"
+        healthcheck:
+            test: ["CMD-SHELL", "pg_isready"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
     app:
         image: pierdoleto:latest
         container_name: app
@@ -9,7 +26,12 @@ services:
             context: .
         volumes:
             - .:/code
-        command: lapis server
+        command:
+            lapis server development
         ports:
             - "8080:8080"
-            - "5432:5432"
+        depends_on:
+            db:
+                condition: service_healthy
+        links:
+            - db

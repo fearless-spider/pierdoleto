@@ -1,8 +1,8 @@
 local config = require("lapis.config")
 
-config({"development", "production"}, {
+config("development", {
 	postgres = {
-		host = "127.0.0.1",
+		host = "172.20.0.1",
 		user = "fearless",
 		password = "fearless",
 		database = "pierdoleto"
