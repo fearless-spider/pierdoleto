@@ -9,10 +9,12 @@ app.layout = require("views.layout")
 
 local Articles = Model:extend("articles")
 
-app:get("index", "/", function()
-	local row = Articles:find(1)
-	print(row)
-	print(Articles:count())
+app:get("index", "/", function(self)
+	self.articles_count = Articles:count()
+	local article = Articles:create({
+		title="Hello",
+		content="THis is test"
+	})
 	return { render = "index" }
 end)
 app:get("tluszczakomiesak", "/miesaki/tluszczakomiesak/", function()

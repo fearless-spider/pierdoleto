@@ -1,4 +1,4 @@
-<h1>Hello World!</h1>
+<h1><%= articles_count %> World!</h1>
 <p>"Pierdole To!" - tak mówiła moja mama gdy umierała.</p>
 <p>Do ostatniego oddechu mówiła:</p>
 <blockquote>"Pierdolę to, idę spać!"</blockquote>
