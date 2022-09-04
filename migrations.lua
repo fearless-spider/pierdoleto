@@ -1,4 +1,5 @@
 local schema = require("lapis.db.schema")
+local db = require("lapis.db")
 local types = schema.types
 
 return {

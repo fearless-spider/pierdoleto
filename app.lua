@@ -6,7 +6,6 @@ local app = lapis.Application()
 
 app:enable("etlua")
 app.layout = require("views.layout")
-
 app:get("index", "/", function(self)
 	self.articles_count = Article:count()
 	local article = Article:create({

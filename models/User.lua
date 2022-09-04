@@ -11,7 +11,7 @@ local User = Model:extend("users", {
 
 function User:get_user(username)
   local username = string.lower(username)
-  return unpack(self:se;ect("WHERE lower(email)=? LIMIT 1", username))
+  return unpack(self:select("WHERE lower(email)=? LIMIT 1", username))
 end
 
 function User:verify(params)
