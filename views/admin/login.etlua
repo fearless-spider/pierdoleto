@@ -1,0 +1,9 @@
+<div>
+<h3>Login<h3>
+<form method="POST" action="/admin/login">
+<input name="csrf_token" type="hidden" value="<%= csrf_token %>" />
+<input name="email" type="email" placeholder="Email" />
+<input name="password" type="password" placeholder="Password" />
+<button type="submit">Log In</button>
+</form>
+</div>

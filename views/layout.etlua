@@ -6,6 +6,11 @@
 </head>
 <body>
   <h1>Pierdole To</h1>
+  <% if errors then %>
+  <% for i, error in pairs(errors) do %>
+  <%= error %>
+  <% end %>
+  <% end %>
   <% content_for("inner") %>
 </body>
 </html>
