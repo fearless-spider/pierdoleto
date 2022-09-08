@@ -1,7 +1,6 @@
 local lapis = require("lapis")
 local respond_to = require("lapis.application").respond_to
 local Article = require("models.Article")
-
 local app = lapis.Application()
 
 app:enable("etlua")
@@ -13,9 +12,9 @@ admin(app)
 app:get("index", "/", function(self)
 	self.articles_count = Article:count()
 	local article = Article:create({
-		title="Hello",
-		content="THis is test",
-		user_id=1
+		title = "Hello",
+		content = "THis is test",
+		user_id = 1,
 	})
 	return { render = "index" }
 end)
