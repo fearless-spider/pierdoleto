@@ -16,4 +16,12 @@ config("local", {
 		database = "pierdoleto"
 	}
 })
+config("test", {
+	postgres = {
+		host = "172.20.0.1",
+		user = "fearless",
+		password = "fearless",
+		database = "pierdoleto"
+	}
+})
 

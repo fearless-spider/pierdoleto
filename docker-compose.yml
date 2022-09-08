@@ -35,3 +35,18 @@ services:
                 condition: service_healthy
         links:
             - db
+    test:
+        image: vpanov/lua-busted
+        container_name: busted
+        build:
+            context: .
+        volumes:
+            - .:/code
+        command:
+              busted spec
+        depends_on:
+            db:
+                condition: service_healthy
+        links:
+            - db
+
